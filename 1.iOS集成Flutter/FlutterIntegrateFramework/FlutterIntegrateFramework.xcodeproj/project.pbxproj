@@ -338,6 +338,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G95Z85YLPY;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/../flutter_module/.ios/Flutter",
 					"$(PROJECT_DIR)/../flutter_module/.ios/Flutter/engine",
@@ -359,6 +360,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G95Z85YLPY;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/../flutter_module/.ios/Flutter",
 					"$(PROJECT_DIR)/../flutter_module/.ios/Flutter/engine",

@@ -11,9 +11,7 @@
 
 @interface AppDelegate : FlutterAppDelegate <UIApplicationDelegate>
 
-@property (strong, nonatomic) UIWindow *window;
 @property (nonatomic, strong) FlutterEngine *flutterEngine;     ///< Flutter引擎
-
 
 @end
 

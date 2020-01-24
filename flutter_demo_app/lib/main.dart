@@ -9,13 +9,19 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   /// 命名路由统一拦截处理
   WidgetBuilder _routerBuilder(BuildContext context, String routerName) {
-    switch (routerName) {
-      case 'new_router': return (context) => first.NewRouter();
-      case 'tip_router': return (context) => first.TipRouter(text: ModalRoute.of(context).settings.arguments,);
-      case 'echo_router': return (context) => first.EchoRouter();
-      case '/': return (context) => first.CounterWidget(title: 'Couter Demo',);
-      default: return (context) => first.CounterWidget(title: 'Default Route',);
+    if (routerName.contains(RegExp(r'^2_'))) {
+      switch (routerName) {
+        case '2_example': return (context) => first.ExampleRoute();
+        case '2_counter_router': return (context) => first.CounterWidget(title: 'Counter Router',);
+        case '2_new_router': return (context) => first.NewRouter();
+        case '2_tip_router': return (context) => first.TipRouter(text: ModalRoute.of(context).settings.arguments,);
+        case '2_echo_router': return (context) => first.EchoRouter();
+        case '2_words_router': return (context) => first.WordsRouter();
+        case '2_resource_router': return (context) => first.ResourceRouter();
+        default: return (context) => first.ExampleRoute();
+      }
     }
+    return (context) => first.ExampleRoute();
   }
 
   @override
@@ -38,7 +44,7 @@ class MyApp extends StatelessWidget {
         "echo_router": (context) => first.EchoRouter(),
         "/": (context) => first.CounterWidget(title: 'Counter Demo',),
       },*/
-      initialRoute: "/",
+      initialRoute: "2_example",
     );
   }
 }

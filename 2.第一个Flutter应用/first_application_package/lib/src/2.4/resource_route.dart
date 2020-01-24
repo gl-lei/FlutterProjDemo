@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class ResourceRouter extends StatelessWidget {
+class ResourceRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

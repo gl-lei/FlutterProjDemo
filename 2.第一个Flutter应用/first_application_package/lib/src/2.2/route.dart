@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-class NewRouter extends StatelessWidget {
+class NewRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('New Router'),
+        title: Text('New Route'),
       ),
       body: Center(
         child: Text(
-          'This is new Router'
+          'This is new Route'
         ),
       ),
     );
@@ -17,15 +17,15 @@ class NewRouter extends StatelessWidget {
 }
 
 /// 路由传参示例
-class TipRouter extends StatelessWidget {
-  TipRouter({Key key, @required this.text}): super(key: key);
+class TipRoute extends StatelessWidget {
+  TipRoute({Key key, @required this.text}): super(key: key);
 
   final String text;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Tip Router'),
+        title: Text('Tip Route'),
       ),
       body: Padding(
         padding: EdgeInsets.all(18),
@@ -47,7 +47,7 @@ class TipRouter extends StatelessWidget {
 }
 
 /// 命令路由传参示例
-class EchoRouter extends StatelessWidget {
+class EchoRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // 获取路由参数
@@ -55,7 +55,7 @@ class EchoRouter extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Echo Router'),
+        title: Text('Echo Route'),
       ),
       body: Center(
         child: Column(

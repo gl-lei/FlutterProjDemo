@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   WidgetBuilder _routerBuilder(BuildContext context, String routerName) {
     if (routerName.contains(RegExp(r'^2_'))) {
       switch (routerName) {
-        case '2_home': return (context) => first.HomeRoute();
+        case '2_example': return (context) => first.HomeRoute();
         case '2_counter_route': return (context) => first.CounterWidget(title: 'Counter Route',);
         case '2_new_route': return (context) => first.NewRoute();
         case '2_tip_route': return (context) => first.TipRoute(text: ModalRoute.of(context).settings.arguments,);
@@ -44,7 +44,7 @@ class MyApp extends StatelessWidget {
         "echo_router": (context) => first.EchoRouter(),
         "/": (context) => first.CounterWidget(title: 'Counter Demo',),
       },*/
-      initialRoute: "2_home",
+      initialRoute: "2_example",
     );
   }
 }

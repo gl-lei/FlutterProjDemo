@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../2.2/router.dart';
+import '../2.2/route.dart';
 
-class ExampleRoute extends StatelessWidget {
+class HomeRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,16 +15,16 @@ class ExampleRoute extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             FlatButton(
-              child: Text('Open Counter Router'),
+              child: Text('Open Counter Route'),
               textColor: Colors.blue,
-              onPressed: () => Navigator.of(context).pushNamed('2_counter_router'),
+              onPressed: () => Navigator.of(context).pushNamed('2_counter_route'),
             ),
             FlatButton(
-                child: Text('Open New Router',),
+                child: Text('Open New Route',),
                 textColor: Colors.green,
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-                    return NewRouter();
+                    return NewRoute();
                   }));
                 }
             ),
@@ -33,7 +33,7 @@ class ExampleRoute extends StatelessWidget {
               onPressed: () async {
                 String result = await Navigator.of(context).push(
                   MaterialPageRoute(builder: (context) {
-                    return TipRouter(text: '路由传参路由传参',);
+                    return TipRoute(text: '路由传参路由传参',);
                   }),
                 );
 
@@ -43,15 +43,15 @@ class ExampleRoute extends StatelessWidget {
             ),
             RaisedButton(
               child: Text('命名路由传参'),
-              onPressed: () => Navigator.of(context).pushNamed('2_echo_router', arguments: 'hi echo!'),
+              onPressed: () => Navigator.of(context).pushNamed('2_echo_route', arguments: 'hi echo!'),
             ),
             RaisedButton(
               child: Text('Package管理'),
-              onPressed: () => Navigator.of(context).pushNamed('2_words_router'),
+              onPressed: () => Navigator.of(context).pushNamed('2_words_route'),
             ),
             RaisedButton(
               child: Text('资源管理'),
-              onPressed: () => Navigator.of(context).pushNamed('2_resource_router'),
+              onPressed: () => Navigator.of(context).pushNamed('2_resource_route'),
             ),
           ],
         ),

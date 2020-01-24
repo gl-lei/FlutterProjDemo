@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
 
-class WordsRouter extends StatelessWidget {
+class WordsRoute extends StatelessWidget {
   final _wordPair = WordPair.random(maxSyllables: 10);
 
   @override

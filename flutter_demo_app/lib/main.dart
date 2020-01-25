@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:first_application_package/first_application_package.dart' as first;
+import 'package:basic_widget_package/basic_widget_package.dart' as basic;
 
 void main() => runApp(MyApp());
 
@@ -8,9 +9,13 @@ void main() => runApp(MyApp());
 /// home 属性也是一个widget
 class MyApp extends StatelessWidget {
   /// 命名路由统一拦截处理
-  WidgetBuilder _routerBuilder(BuildContext context, String routerName) {
-    if (routerName.contains(RegExp(r'^2_'))) {
-      switch (routerName) {
+  WidgetBuilder _routerBuilder(BuildContext context, String routeName) {
+    if (routeName == 'home') {
+      return (context) => MainHomeRoute();
+    }
+
+    if (routeName.contains(RegExp(r'^2_'))) {
+      switch (routeName) {
         case '2_home': return (context) => first.HomeRoute();
         case '2_counter_route': return (context) => first.CounterWidget(title: 'Counter Route',);
         case '2_new_route': return (context) => first.NewRoute();
@@ -20,8 +25,27 @@ class MyApp extends StatelessWidget {
         case '2_resource_route': return (context) => first.ResourceRoute();
         default: return (context) => first.HomeRoute();
       }
+    } else if (routeName.contains(RegExp(r'^3_'))) {
+      switch (routeName) {
+        case '3_home': return (context) => basic.HomeRoute();
+        case '3_counter_route': return (context) => basic.CounterRoute();
+        case '3_state_route': return (context) => basic.StateRoute();
+        case '3_global_state_route': return (context) => basic.GlobalStateRoute();
+        case '3_cupertino_state_route': return (context) => basic.CupertinoRoute();
+        case '3_tapboxa_route': return (context) => basic.TapBoxARoute();
+        case '3_tapboxb_route': return (context) => basic.TapBoxBParentWidget();
+        case '3_tapboxc_route': return (context) => basic.TapBoxCParentWidget();
+        case '3_text_route': return (context) => basic.TextRoute();
+        case '3_button_route': return (context) => basic.ButtonRoute();
+        case '3_image_icon_route': return (context) => basic.ImageIconRoute();
+        case '3_switch_checkbox_route': return (context) => basic.SwitchCheckboxRoute();
+        case '3_textfield_route': return (context) => basic.TextFieldRoute();
+        case '3_form_route': return (context) => basic.FormRoute();
+        case '3_progress_route': return (context) => basic.ProgressRoute();
+        default: return (context) => basic.HomeRoute();
+      }
     }
-    return (context) => first.HomeRoute();
+    return (context) => MainHomeRoute();
   }
 
   @override
@@ -44,7 +68,37 @@ class MyApp extends StatelessWidget {
         "echo_router": (context) => first.EchoRouter(),
         "/": (context) => first.CounterWidget(title: 'Counter Demo',),
       },*/
-      initialRoute: "2_home",
+      initialRoute: "home",
+    );
+  }
+}
+
+
+/// Package入口
+class MainHomeRoute extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Main Home Route'),
+      ),
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              RaisedButton(
+                child: Text('First Application Package'),
+                onPressed: () => Navigator.of(context).pushNamed('2_home'),
+              ),
+              RaisedButton(
+                child: Text('Basic Widget Package'),
+                onPressed: () => Navigator.of(context).pushNamed('3_home'),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

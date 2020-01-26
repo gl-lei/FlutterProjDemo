@@ -27,6 +27,8 @@ dependencies:
     path: ../2.第一个Flutter应用/first_application_package
   basic_widget_package:
     path: ../3.基础组件/basic_widget_package
+  layout_widget_package:
+    path: ../4.布局类组件/layout_widget_package
 
 dev_dependencies:
   flutter_test:

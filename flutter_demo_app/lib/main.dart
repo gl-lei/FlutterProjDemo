@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:first_application_package/first_application_package.dart' as first;
 import 'package:basic_widget_package/basic_widget_package.dart' as basic;
+import 'package:layout_widget_package/layout_widget_package.dart' as layout;
 
 void main() => runApp(MyApp());
 
@@ -43,6 +44,16 @@ class MyApp extends StatelessWidget {
         case '3_form_route': return (context) => basic.FormRoute();
         case '3_progress_route': return (context) => basic.ProgressRoute();
         default: return (context) => basic.HomeRoute();
+      }
+    } else if (routeName.contains(RegExp(r'^4_'))) {
+      switch (routeName) {
+        case '4_home': return (context) => layout.HomeRoute();
+        case '4_row_column_route': return (context) => layout.RowColumnRoute();
+        case '4_flex_route': return (context) => layout.FlexRoute();
+        case '4_wrap_flow_route': return (context) => layout.WrapFlowRoute();
+        case '4_stack_position_route': return (context) => layout.StackPositionRoute();
+        case '4_align_route': return (context) => layout.AlignRoute();
+        default: return (context) => layout.HomeRoute();
       }
     }
     return (context) => MainHomeRoute();
@@ -94,6 +105,10 @@ class MainHomeRoute extends StatelessWidget {
               RaisedButton(
                 child: Text('Basic Widget Package'),
                 onPressed: () => Navigator.of(context).pushNamed('3_home'),
+              ),
+              RaisedButton(
+                child: Text('Layout Widget Package'),
+                onPressed: () => Navigator.of(context).pushNamed('4_home'),
               ),
             ],
           ),

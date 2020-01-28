@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:first_application_package/first_application_package.dart' as first;
 import 'package:basic_widget_package/basic_widget_package.dart' as basic;
 import 'package:layout_widget_package/layout_widget_package.dart' as layout;
+import 'package:container_widget_package/container_widget_package.dart' as container;
 
 void main() => runApp(MyApp());
 
@@ -54,6 +55,18 @@ class MyApp extends StatelessWidget {
         case '4_stack_position_route': return (context) => layout.StackPositionRoute();
         case '4_align_route': return (context) => layout.AlignRoute();
         default: return (context) => layout.HomeRoute();
+      }
+    } else if (routeName.contains(RegExp(r'^5_'))) {
+      switch (routeName) {
+        case '5_home': return (context) => container.HomeRoute();
+        case '5_padding_route': return (context) => container.PaddingRoute();
+        case '5_constraint_route': return (context) => container.ConstraintRoute();
+        case '5_decorated_box_route': return (context) => container.DecoratedBoxRoute();
+        case '5_transform_route': return (context) => container.TransformRoute();
+        case '5_container_route': return (context) => container.ContainerRoute();
+        case '5_scaffold_route': return (context) => container.ScaffoldRoute();
+        case '5_clip_route': return (context) => container.ClipRoute();
+        default: return (context) => container.HomeRoute();
       }
     }
     return (context) => MainHomeRoute();
@@ -109,6 +122,10 @@ class MainHomeRoute extends StatelessWidget {
               RaisedButton(
                 child: Text('Layout Widget Package'),
                 onPressed: () => Navigator.of(context).pushNamed('4_home'),
+              ),
+              RaisedButton(
+                child: Text('Container Widget Pacakge'),
+                onPressed: () => Navigator.of(context).pushNamed('5_home'),
               ),
             ],
           ),

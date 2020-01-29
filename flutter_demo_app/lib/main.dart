@@ -3,6 +3,7 @@ import 'package:first_application_package/first_application_package.dart' as fir
 import 'package:basic_widget_package/basic_widget_package.dart' as basic;
 import 'package:layout_widget_package/layout_widget_package.dart' as layout;
 import 'package:container_widget_package/container_widget_package.dart' as container;
+import 'package:scroll_widget_package/scroll_widget_package.dart' as scroll;
 
 void main() => runApp(MyApp());
 
@@ -68,6 +69,24 @@ class MyApp extends StatelessWidget {
         case '5_clip_route': return (context) => container.ClipRoute();
         default: return (context) => container.HomeRoute();
       }
+    } else if (routeName.contains(RegExp(r'^6_'))) {
+      switch (routeName) {
+        case '6_home': return (context) => scroll.HomeRoute();
+        case '6_single_child_scrollview_route': return (context) => scroll.SingleChildScrollViewRoute();
+        case '6_listview_route': return (context) => scroll.ListViewRoute();
+        case '6_listview_sliver_route': return (context) => scroll.ListViewSliverRoute();
+        case '6_listview_separated_route': return (context) => scroll.ListViewSeparatedRoute();
+        case '6_listview_infinite_route': return (context) => scroll.ListViewInfiniteRoute();
+        case '6_gridview_fixed_route': return (context) => scroll.GridViewFixedRoute();
+        case '6_gridview_quick_fixed_route': return (context) => scroll.GridViewQuickFixedRoute();
+        case '6_gridview_max_extent_route': return (context) => scroll.GridViewMaxExtentRoute();
+        case '6_gridview_max_extent_quick_route': return (context) => scroll.GridViewMaxExtentQuickRoute();
+        case '6_gridview_builder_route': return (context) => scroll.GridViewBuilderRoute();
+        case '6_custom_scrollview_route': return (context) => scroll.CustomScrollViewRoute();
+        case '6_scrollcontroller_route': return (context) => scroll.ScrollControllerRoute();
+        case '6_scrollcontroller_notification_route': return (context) => scroll.ScrollControllerNotificationRoute();
+        default: return (context) => scroll.HomeRoute();
+      }
     }
     return (context) => MainHomeRoute();
   }
@@ -124,8 +143,12 @@ class MainHomeRoute extends StatelessWidget {
                 onPressed: () => Navigator.of(context).pushNamed('4_home'),
               ),
               RaisedButton(
-                child: Text('Container Widget Pacakge'),
+                child: Text('Container Widget Package'),
                 onPressed: () => Navigator.of(context).pushNamed('5_home'),
+              ),
+              RaisedButton(
+                child: Text('Scroll Widget Package'),
+                onPressed: () => Navigator.of(context).pushNamed('6_home'),
               ),
             ],
           ),

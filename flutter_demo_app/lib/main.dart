@@ -4,6 +4,7 @@ import 'package:basic_widget_package/basic_widget_package.dart' as basic;
 import 'package:layout_widget_package/layout_widget_package.dart' as layout;
 import 'package:container_widget_package/container_widget_package.dart' as container;
 import 'package:scroll_widget_package/scroll_widget_package.dart' as scroll;
+import 'package:functional_widget_package/functional_widget_package.dart' as functional;
 
 void main() => runApp(MyApp());
 
@@ -87,6 +88,19 @@ class MyApp extends StatelessWidget {
         case '6_scrollcontroller_notification_route': return (context) => scroll.ScrollControllerNotificationRoute();
         default: return (context) => scroll.HomeRoute();
       }
+    } else if (routeName.contains(RegExp(r'^7_'))) {
+      switch (routeName) {
+        case '7_home': return (context) => functional.HomeRoute();
+        case '7_popscope_route': return (context) => functional.PopScopeRoute();
+        case '7_inherited_route': return (context) => functional.InheritedRoute();
+        case '7_provider_route': return (context) => functional.ProviderRoute();
+        case '7_color_route': return (context) => functional.ColorRoute();
+        case '7_theme_route': return (context) => functional.ThemeRoute();
+        case '7_futurebuilder_route': return (context) => functional.FutureBuilderRoute();
+        case '7_streambuilder_route': return (context) => functional.StreamBuilderRoute();
+        case '7_dialog_route': return (context) => functional.DialogRoute();
+        default: return (context) => functional.HomeRoute();
+      }
     }
     return (context) => MainHomeRoute();
   }
@@ -131,24 +145,28 @@ class MainHomeRoute extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               RaisedButton(
-                child: Text('First Application Package'),
+                child: Text('2. First Application Package'),
                 onPressed: () => Navigator.of(context).pushNamed('2_home'),
               ),
               RaisedButton(
-                child: Text('Basic Widget Package'),
+                child: Text('3. Basic Widget Package'),
                 onPressed: () => Navigator.of(context).pushNamed('3_home'),
               ),
               RaisedButton(
-                child: Text('Layout Widget Package'),
+                child: Text('4. Layout Widget Package'),
                 onPressed: () => Navigator.of(context).pushNamed('4_home'),
               ),
               RaisedButton(
-                child: Text('Container Widget Package'),
+                child: Text('5. Container Widget Package'),
                 onPressed: () => Navigator.of(context).pushNamed('5_home'),
               ),
               RaisedButton(
-                child: Text('Scroll Widget Package'),
+                child: Text('6. Scroll Widget Package'),
                 onPressed: () => Navigator.of(context).pushNamed('6_home'),
+              ),
+              RaisedButton(
+                child: Text('7. Functional Widget Package'),
+                onPressed: () => Navigator.of(context).pushNamed('7_home'),
               ),
             ],
           ),

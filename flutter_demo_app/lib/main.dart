@@ -5,6 +5,7 @@ import 'package:layout_widget_package/layout_widget_package.dart' as layout;
 import 'package:container_widget_package/container_widget_package.dart' as container;
 import 'package:scroll_widget_package/scroll_widget_package.dart' as scroll;
 import 'package:functional_widget_package/functional_widget_package.dart' as functional;
+import 'package:event_notification_handle_package/event_notification_handle_package.dart' as event;
 
 void main() => runApp(MyApp());
 
@@ -101,6 +102,24 @@ class MyApp extends StatelessWidget {
         case '7_dialog_route': return (context) => functional.DialogRoute();
         default: return (context) => functional.HomeRoute();
       }
+    } else if (routeName.contains(RegExp(r'^8_'))) {
+      switch (routeName) {
+        case '8_home': return (context) => event.HomeRoute();
+        case '8_pointer_event_route': return (context) => event.PointerEventRoute();
+        case '8_pointer_event_opaque_route': return (context) => event.PointerEventOpaqueRoute();
+        case '8_pointer_event_translucent_route': return (context) => event.PointerEventTranslucentRoute();
+        case '8_pointer_event_ignore_route': return (context) => event.PointerEventIgnoreRoute();
+        case '8_gesture_route': return (context) => event.GestureRoute();
+        case '8_gesture_drag_route': return (context) => event.GestureDragRoute();
+        case '8_gesture_dray_single_dir_route': return (context) => event.GestureDragSingleDirRoute();
+        case '8_gesture_scale_route': return (context) => event.GestureScaleRoute();
+        case '8_gesture_recognizer_route': return (context) => event.GestureRecognizerRoute();
+        case '8_gesture_conflict_route': return (context) => event.GestureConflictRoute();
+        case '8_eventbus_route': return (context) => event.EventBusRoute();
+        case '8_notification_route': return (context) => event.NotificationRoute();
+        case '8_custom_notification_route': return (context) => event.CustomNotificationRoute();
+        default: return (context) => event.HomeRoute();
+      }
     }
     return (context) => MainHomeRoute();
   }
@@ -167,6 +186,10 @@ class MainHomeRoute extends StatelessWidget {
               RaisedButton(
                 child: Text('7. Functional Widget Package'),
                 onPressed: () => Navigator.of(context).pushNamed('7_home'),
+              ),
+              RaisedButton(
+                child: Text('8. Event Notification Handle Package'),
+                onPressed: () => Navigator.of(context).pushNamed('8_home'),
               ),
             ],
           ),

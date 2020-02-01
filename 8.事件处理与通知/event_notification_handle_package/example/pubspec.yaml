@@ -1,5 +1,5 @@
-name: flutter_demo_app
-description: A new Flutter application.
+name: event_notification_handle_package_example
+description: A new Flutter project.
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -23,20 +23,8 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
-  first_application_package:
-    path: ../2.第一个Flutter应用/first_application_package
-  basic_widget_package:
-    path: ../3.基础组件/basic_widget_package
-  layout_widget_package:
-    path: ../4.布局类组件/layout_widget_package
-  container_widget_package:
-    path: ../5.容器类组件/container_widget_package
-  scroll_widget_package:
-    path: ../6.可滚动组件/scroll_widget_package
-  functional_widget_package:
-    path: ../7.功能型组件/functional_widget_package
   event_notification_handle_package:
-    path: ../8.事件处理与通知/event_notification_handle_package
+    path: ../
 
 dev_dependencies:
   flutter_test:

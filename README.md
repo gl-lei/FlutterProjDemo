@@ -40,3 +40,10 @@ flutter build ios --debug --simulator --no-codesign
 ```
 然后再打开相应的 iOS 工程目录，使用 Xcode 运行工程即可。
 
+### 第十二章：包与插件
+进入 [platform_channel_demo](./12.包与插件/platform_channel_demo) 目录
+在目录下执行代码
+```dart
+flutter package get
+```
+拖动项目文件到 Android Studio 或者其他 IDE 中，运行工程即可
